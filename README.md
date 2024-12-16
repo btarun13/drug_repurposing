@@ -34,7 +34,7 @@ All required libraries are available in Google Colab with A100 or T4 GPUs. Insta
 ```
 ## Features
 
-Generation of initial embeddings using transformers based on textual information, followed by embedding refinement using knowledge graph connections (Q1)
+Generation of initial embeddings using transformers from the data provided in embeddings file.
 Data preprocessing and LightGCN implementation for drug-disease link classification based on learned embeddings, with sigmoid activation
 Additional functionality for drug recommendations based on specific diseases
 Standardized terminology: "smallMolecule" and "drugs" categories were consolidated as "drugs", while the target category was designated as "diseases" to facilitate bipartite graph nature.
