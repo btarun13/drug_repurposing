@@ -4,6 +4,7 @@ This project consists of two Colab notebooks that require GPU support for execut
 
 ## Question 1: Node Embedding Generation
 For the initial node embeddings, I extracted the 'all_names', 'description', and 'label' columns from the Nodes.csv file. Using the 'microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext' transformer, I generated 200-dimensional embeddings for each node based on this textual information.
+
 The second phase involved learning and updating these embeddings using knowledge graph connections from Edges.csv. Due to time constraints, I've included comments describing my intended approach. While I explored the RTXteam repository, integrating their codebase would have required more time. Instead, I implemented solutions using familiar methodologies for faster development.
 
 ## Question 2: Link Classification
