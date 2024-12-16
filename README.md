@@ -1,6 +1,6 @@
 # Drug Repurposing (Knowledge Embedding and Classifier)
 
-This project consists of two Colab notebooks that require GPU support for execution. All necessary data files are included in this repository.
+This project consists of two Colab notebooks that require GPU support for execution. All necessary data files are included in this repository. (With some sent over)
 
 ## Question 1: Node Embedding Generation
 For the initial node embeddings, I extracted the 'all_names', 'description', and 'label' columns from the Nodes.csv file. Using the 'microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext' transformer, I generated 200-dimensional embeddings for each node based on this textual information.
