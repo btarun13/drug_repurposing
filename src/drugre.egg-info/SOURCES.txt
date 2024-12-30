@@ -1,6 +1,5 @@
 README.md
 pyproject.toml
-src/drugre/__init__.py
 src/drugre/data_loader.py
 src/drugre/main.py
 src/drugre/model.py
