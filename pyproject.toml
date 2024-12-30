@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools","wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "DrugRepurposing"
 version = "0.1.0"
@@ -20,3 +24,9 @@ dependencies = [
 # McCabe complexity (`C901`) by default.
 select = ["E", "F", "W", "I", "N", "PD"]
 ignore = []
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-dir]
+"" = "src" ## this is to source data from package, this this data would be within this source folder
