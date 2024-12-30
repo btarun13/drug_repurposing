@@ -1,6 +1,6 @@
 import pickle
 import torch
-from src.model import 
+from drugre.model import 
 
 def save_model_pickle(model, data, save_path: str):
     # Move model to CPU for saving
