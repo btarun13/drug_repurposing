@@ -1,0 +1,22 @@
+[project]
+name = "drug-repurposing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=2.0.2",
+    "pandas>=2.2.3",
+    "ruff>=0.7.2",
+    "scikit-learn>=1.5.2",
+    "torch-geometric>=2.6.1",
+    "torch>=2.5.1",
+]
+
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E", "F", "W", "I", "N", "PD"]
+ignore = []
