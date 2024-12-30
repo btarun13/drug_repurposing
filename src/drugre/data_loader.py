@@ -6,7 +6,7 @@ import torch
 from sklearn.model_selection import train_test_split
 
 
-def prepare_data(ground_truth_path : str , node_embeddings_path : str, test_size= test_size , random_state: int ) -> dict:
+def prepare_data(ground_truth_path : str , node_embeddings_path : str, test_size= test_size , random_state = random_state) -> dict:
     """
     Prepare train and test datasets using the ground truth data and initial embeddings
     """
