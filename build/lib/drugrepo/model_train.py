@@ -86,6 +86,7 @@ def train_and_evaluate(model: torch.nn.Module,
                        lr : float, 
                        device='cuda'):
     
+    
     """Train and evaluate the model"""
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
@@ -113,7 +114,8 @@ def train_and_evaluate(model: torch.nn.Module,
             print(f'Epoch {epoch+1}: Loss = {train_loss:.4f}, '
                   f'Test AUC-ROC = {metrics["AUC-ROC"]:.4f}, '
                   f'Test AUC-PR = {metrics["AUC-PR"]:.4f}')
-
+            
+    return model
             # Log metric to MLflow
         # mlflow.log_metric("loss", loss.item(), step=epoch)
 
