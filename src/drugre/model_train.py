@@ -1,10 +1,17 @@
 
-
 import torch.nn.functional as F
 from sklearn.metrics import auc, precision_recall_curve, roc_auc_score
+import torch
 
 
-def train_epoch(model, train_edge_index, train_pairs, train_labels, optimizer, batch_size, device):
+def train_epoch(model: torch.nn.Module, 
+                train_edge_index: torch.Tensor, 
+                train_pairs: torch.Tensor, 
+                train_labels: torch.Tensor, 
+                optimizer, 
+                batch_size: int, 
+                device: str = "cuda"):
+    
     """Train for one epoch"""
     model.train()
     total_loss = 0
@@ -47,7 +54,12 @@ def train_epoch(model, train_edge_index, train_pairs, train_labels, optimizer, b
 
     return total_loss / num_batches
 
-def evaluate(model, train_edge_index, test_pairs, test_labels, device):
+def evaluate(model: torch.nn.Module, 
+             train_edge_index: torch.Tensor, 
+             test_pairs: torch.Tensor, 
+             test_labels: torch.Tensor, 
+             device: str = "cuda") -> dict:
+    
     """Evaluate the model"""
     model.eval()
     with torch.no_grad():
@@ -67,7 +79,13 @@ def evaluate(model, train_edge_index, test_pairs, test_labels, device):
             'AUC-PR': auc_pr
         }
 
-def train_and_evaluate(model, data, num_epochs=100, batch_size=128, lr=0.001, device='cuda'):
+def train_and_evaluate(model: torch.nn.Module, 
+                       data : dict, 
+                       num_epochs : int, 
+                       batch_size : int, 
+                       lr : float, 
+                       device='cuda'):
+    
     """Train and evaluate the model"""
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
@@ -97,5 +115,5 @@ def train_and_evaluate(model, data, num_epochs=100, batch_size=128, lr=0.001, de
                   f'Test AUC-PR = {metrics["AUC-PR"]:.4f}')
 
             # Log metric to MLflow
-        mlflow.log_metric("loss", loss.item(), step=epoch)
+        # mlflow.log_metric("loss", loss.item(), step=epoch)
 
