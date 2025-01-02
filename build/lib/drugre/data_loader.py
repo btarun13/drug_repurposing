@@ -1,12 +1,14 @@
 
-
 import numpy as np
 import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
 
 
-def prepare_data(ground_truth_path : str , node_embeddings_path : str, test_size : float , random_state : int) -> dict:
+def prepare_data(ground_truth_path : str , 
+                 node_embeddings_path : str, 
+                 test_size : float , 
+                 random_state : int) -> dict:
     """
     Prepare train and test datasets using the ground truth data and initial embeddings
     """
