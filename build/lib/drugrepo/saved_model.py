@@ -1,6 +1,6 @@
 import pickle
 import torch
-from drugre.model import 
+from drugrepo.model import LightGCN
 
 def save_model_pickle(model, data, save_path: str):
     # Move model to CPU for saving
