@@ -1,9 +1,15 @@
 
 
 import pandas as pd
+import torch
 
 
-def get_pair_score(model, drug_id, disease_id, data, device):
+def get_pair_score(model: torch.nn.Module,
+                   drug_id: str, 
+                   disease_id: str, 
+                   data: dict, 
+                   device: str) -> dict:
+    
     """
     Get interaction score for a specific drug-disease pair
 
@@ -50,7 +56,12 @@ def get_pair_score(model, drug_id, disease_id, data, device):
             'drug_emb':list(drug_emb)
         }
 
-def generate_recommendations_for_disease(model, disease_id, ground_truth, data, device, top_k=20):
+def generate_recommendations_for_disease(model: torch.nn.Module, 
+                                         disease_id: str, 
+                                         ground_truth: pd.DataFrame, 
+                                         data: dict, 
+                                         device: str, 
+                                         top_k: int) -> pd.DataFrame:
     """
     Generate ranked drug recommendations for a specific disease
 

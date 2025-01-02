@@ -23,24 +23,25 @@ def run_pipeline(
     data = prepare_data(ground_truth, node_embeddings, test_size= test_size) ###  80/20 split
 
     model = LightGCN(disease_embeddings=data['disease_embeddings'],
-    drug_embeddings=data['drug_embeddings'],num_layers = num_layers).to(device)
-
+                     drug_embeddings=data['drug_embeddings'],
+                     num_layers = num_layers).to(device)
+    
         # Start MLflow run
-    with mlflow.start_run():
-        # Log hyperparameters
-        mlflow.log_param("epochs", epochs)
-        mlflow.log_param("batch_size", batch_size)
-        mlflow.log_param("num_layers", num_layers)
-        mlflow.log_param("test_size", test_size)
+    # with mlflow.start_run():
+    #     # Log hyperparameters
+    #     mlflow.log_param("epochs", epochs)
+    #     mlflow.log_param("batch_size", batch_size)
+    #     mlflow.log_param("num_layers", num_layers)
+    #     mlflow.log_param("test_size", test_size)
 
-        # Train and evaluate
+    #     # Train and evaluate
         train_and_evaluate(model, data, num_epochs=epochs, batch_size=batch_size, device=device)
 
-        # Save model
+    #     # Save model
         save_model_pickle(model, data, save_path)
 
-        # Optionally, log the model to MLflow
-        mlflow.pytorch.log_model(model, artifact_path="models")
+    #     # Optionally, log the model to MLflow
+    #     mlflow.pytorch.log_model(model, artifact_path="models")
 
 
 

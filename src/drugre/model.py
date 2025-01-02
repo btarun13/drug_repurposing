@@ -1,7 +1,7 @@
 
 
 import torch.nn as nn
-
+import torch
 
 class LightGCN(nn.Module):
     def __init__(self, disease_embeddings, drug_embeddings, num_layers):
