@@ -34,7 +34,7 @@ At the moment there is only one type of architecture specified at in drugrepo.mo
 
 ```python
 
-m = prepare_data("/content/Ground Truth.csv",        #### path for edge data
+input_data = prepare_data("/content/Ground Truth.csv",        #### path for edge data
              "/content/recomendation_pipeline_initial_node_embeddings.csv",  ### oath for node data
              test_size=0.3,   ### test size and random states can vary, in cause you have a hold out validation set we can use multiple train/test spilts with a lot of different seeds to measure performance on validation set
              random_state= 123)
@@ -53,7 +53,7 @@ model = LightGCN(
     drug_embeddings=m['drug_embeddings'],
     num_layers=layer).to(device)
 
-train_and_evaluate(model, m, num_epochs=20, batch_size=50, lr = 0.01, device=device)  ### change hyperparameters
+train_and_evaluate(model, input_data, num_epochs=20, batch_size=50, lr = 0.01, device=device)  ### change hyperparameters
 
 ```
 ```bash
@@ -71,7 +71,7 @@ Epoch 20: Loss = 0.0564, Test AUC-ROC = 0.9617, Test AUC-PR = 0.9330
 get_pair_score(model,
                'CHEMBL.COMPOUND:CHEMBL30',
                'MONDO:0007362', 
-               m,
+               input_data,
                device)
 
 ```
