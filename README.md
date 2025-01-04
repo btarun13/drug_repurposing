@@ -49,8 +49,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ```python
 layer = 2
 model = LightGCN(
-    disease_embeddings=m['disease_embeddings'],
-    drug_embeddings=m['drug_embeddings'],
+    disease_embeddings=input_data['disease_embeddings'],
+    drug_embeddings=input_data['drug_embeddings'],
     num_layers=layer).to(device)
 
 train_and_evaluate(model, input_data, num_epochs=20, batch_size=50, lr = 0.01, device=device)  ### change hyperparameters
