@@ -1,4 +1,4 @@
-# Drug Repurposing (Knowledge Embedding and Classifier)
+# Drug Repurposing (Recommendation package)
 
 Experimental Package for building models and stacking them for recommendation score. We can also integrate them in MLflow for logging parameters.
 
