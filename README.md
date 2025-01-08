@@ -32,6 +32,37 @@ from drugrepo.predictor import get_pair_score
 
 At the moment there is only one type of architecture specified at in drugrepo.model . We can have more architectures defined within and use for training models with different architecture. For now, we will continue with LightGCN
 
+```bash
+How edge data(grouth truth) should be, PS: note that they are csv and not | separated !
+
+source     |target      |y
+Aspirin    |Diabetes    |1
+Ibuprofen  |Cancer      |1
+Paracetamol|Asthma      |1
+Amoxicillin|Influenza   |1
+Metformin  |Hypertension|1
+
+
+
+```
+
+
+```bash
+How node data(embedding or inital features) can look like? PS: should use comma instead of |
+
+id       |name                 |embedding_0|embedding_1|embedding_2 |embedding_3
+ID_type_1|somatization disorder|-0.325601  |0.076047   |0.299131    |-0.2558
+ID_type_2|Down syndrome        |-0.325601  |0.076047   |0.299131    |-0.2558
+ID_type_3|GRP                  |-0.325601  |0.076047   |0.299131    |-0.2558
+ID_type_4|burn                 |-0.325601  |0.076047   |0.299131    |-0.2558
+
+
+
+```
+This is an example on how you can send in the data
+
+
+
 ```python
 
 input_data = prepare_data("/content/Ground Truth.csv",        #### path for edge data
@@ -69,16 +100,16 @@ Epoch 20: Loss = 0.0564, Test AUC-ROC = 0.9617, Test AUC-PR = 0.9330
 
 ```python
 get_pair_score(model,
-               'CHEMBL.COMPOUND:CHEMBL30',
-               'MONDO:0007362', 
+               'CHEMBL.COMPOUND:CHEMBL30',  ## ID_type_random2
+               'MONDO:0007362',             ## ID_type_random1
                input_data,
                device)
 
 ```
 
 ```bash
-{'drug_id': 'CHEMBL.COMPOUND:CHEMBL30',
- 'disease_id': 'MONDO:0007362',
+{'drug_id': 'CHEMBL.COMPOUND:CHEMBL30',   ## ID_type_random2
+ 'disease_id': 'MONDO:0007362',           ## ID_type_random1
  'raw_score': 1.5422860383987427,
  'probability': 0.8237967491149902,
  'disease_emb': [tensor([-5.9911e-02, -1.2041e-01,  5.0482e-02, -3.2367e-03,  9.9549e-02,
