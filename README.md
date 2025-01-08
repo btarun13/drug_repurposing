@@ -30,7 +30,7 @@ from drugrepo.predictor import get_pair_score
 
 ```
 
-At the moment there is only one type of architecture specified at in drugrepo.model . We can have more architectures defined within and use for training models with different architecture. For now, we will continue with LightGCN
+At the moment there is only one type of architecture specified at in drugrepo.model . We can have more architectures defined within and use for training models with different architecture. For now, we will continue with LightGCN(output can be y-> 0,1 or y-> any float). For y-> float the loss functions will be changed. refer notebooks. These work as link prediction
 
 ```bash
 How edge data(grouth truth) should be, PS: note that they are csv and not | separated.
