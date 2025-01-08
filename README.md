@@ -33,7 +33,7 @@ from drugrepo.predictor import get_pair_score
 At the moment there is only one type of architecture specified at in drugrepo.model . We can have more architectures defined within and use for training models with different architecture. For now, we will continue with LightGCN
 
 ```bash
-How edge data(grouth truth) should be, PS: note that they are csv and not | separated !
+How edge data(grouth truth) should be, PS: note that they are csv and not | separated.
 
 source     |target      |y
 Aspirin    |Diabetes    |1
@@ -48,7 +48,7 @@ Metformin  |Hypertension|1
 
 
 ```bash
-How node data(embedding or inital features) can look like? PS: should use comma instead of |
+How node data(embedding or inital features) can look like? PS: should use comma instead of |.
 
 id       |name                 |embedding_0|embedding_1|embedding_2 |embedding_3
 ID_type_1|somatization disorder|-0.325601  |0.076047   |0.299131    |-0.2558
