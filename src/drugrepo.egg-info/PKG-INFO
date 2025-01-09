@@ -1,9 +1,11 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.2
 Name: drugrepo
 Version: 0.1.0
 Summary: Add your description here
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
+Requires-Dist: flask>=3.1.0
+Requires-Dist: ipykernel>=6.29.5
 Requires-Dist: numpy>=2.0.2
 Requires-Dist: pandas>=2.2.3
 Requires-Dist: ruff>=0.7.2

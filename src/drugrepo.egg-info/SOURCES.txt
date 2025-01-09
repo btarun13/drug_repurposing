@@ -1,6 +1,7 @@
 README.md
 pyproject.toml
 src/drugrepo/__init__.py
+src/drugrepo/cli_api.py
 src/drugrepo/data_loader.py
 src/drugrepo/main.py
 src/drugrepo/model.py

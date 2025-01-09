@@ -9,6 +9,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
+    "flask>=3.1.0",
+    "ipykernel>=6.29.5",
     "numpy>=2.0.2",
     "pandas>=2.2.3",
     "ruff>=0.7.2",
@@ -22,7 +24,7 @@ dependencies = [
 # [tool.ruff.lint]
 # # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
 # # Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
-# # McCabe complexity (`C901`) by default.
+# # McCabe complexity (`C901`src) by default.
 # select = ["E", "F", "W", "I", "N", "PD"]
 # ignore = []
 
