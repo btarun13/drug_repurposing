@@ -8,8 +8,8 @@ Experimental Package for building models and stacking them for recommendation sc
 !pip install git+https://github.com/btarun13/drug_repurposing.git@feature_branch
 
 ```
-
-In case you are using VScode, .toml files will have everything. If you have uv package manager, just run
+You can use above line in colab should work fine.
+In case you are using VScode(Under testing), .toml files will have everything. If you have uv package manager, just run
 
 ```bash
 
