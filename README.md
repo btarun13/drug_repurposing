@@ -23,11 +23,11 @@ With this, you would be in the same enviroment setting used for the package.
 ## Example code:
 ```python
 
-from drugrepo.data_loader import prepare_data
-from drugrepo.model import LightGCN
-from drugrepo.model_train import train_and_evaluate
 import torch
+from drugrepo.model import LightGCN
+from drugrepo.data_loader import prepare_data
 from drugrepo.predictor import get_pair_score
+from drugrepo.model_train import train_and_evaluate
 
 ```
 
