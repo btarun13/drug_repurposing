@@ -9,6 +9,7 @@ Experimental Package for building models and stacking them for recommendation sc
 
 ```
 You can use above line in colab should work fine.
+
 In case you are using VScode(Under testing), .toml files will have everything. If you have uv package manager, just run
 
 ```bash
