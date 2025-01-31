@@ -172,7 +172,5 @@ get_pair_score(model,
 
 
 
-## Acknowledgments
-Thank you for the opportunity to work on this test project.
 
 
