@@ -5,7 +5,7 @@ Experimental Package for building models and stacking them for recommendation sc
 ## To install and use package from github repo
 
 ```
-!pip install git+https://github.com/btarun13/drug_repurposing.git@feature_branch
+!pip install git+https://github.com/btarun13/drug_repurposing.git@main
 
 ```
 You can use above line in colab should work fine.
